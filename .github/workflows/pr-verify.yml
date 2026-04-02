@@ -33,7 +33,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Run tests
-        run: dotnet test --Configuration Release --no-build
+        run: dotnet test --configuration Release --no-build
 
       - name: Code formatting check
         run: dotnet format -v detailed --verify-no-changes
