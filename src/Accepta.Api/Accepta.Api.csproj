@@ -15,4 +15,18 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.13.19" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\Exceptions\" />
+    <Folder Include="Common\Middleware\" />
+    <Folder Include="Common\Extensions\" />
+    <Folder Include="Features\Receipts\Contracts\" />
+    <Folder Include="Features\Receipts\Domain\" />
+    <Folder Include="Features\Receipts\Persistence\" />
+    <Folder Include="Features\Receipts\Validators\" />
+    <Folder Include="Features\Receipts\Services\" />
+    <Folder Include="Infrastructure\Database\" />
+    <Folder Include="Infrastructure\Auth\" />
+    <Folder Include="Infrastructure\AWS\" />
+    <Folder Include="Infrastructure\Configuration\" />
+  </ItemGroup>
 </Project>
