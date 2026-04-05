@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -9,10 +9,21 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <!-- Generate ready to run images during publishing to improvement cold starts. -->
     <PublishReadyToRun>true</PublishReadyToRun>
+    <UserSecretsId>fe7b9bae-b93e-4d6d-a7e0-71448730a3f1</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.AspNetCoreServer.Hosting" Version="1.10.0" />
+    <PackageReference Include="EFCore.NamingConventions" Version="10.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.13.19" />
   </ItemGroup>
   <ItemGroup>
@@ -20,8 +31,6 @@
     <Folder Include="Common\Middleware\" />
     <Folder Include="Common\Extensions\" />
     <Folder Include="Features\Receipts\Contracts\" />
-    <Folder Include="Features\Receipts\Domain\" />
-    <Folder Include="Features\Receipts\Persistence\" />
     <Folder Include="Features\Receipts\Validators\" />
     <Folder Include="Features\Receipts\Services\" />
     <Folder Include="Infrastructure\Database\" />
