@@ -1,3 +1,4 @@
+using Accepta.Api.Infrastructure.Configuration;
 using Accepta.Api.Infrastructure.Database;
 
 using Microsoft.EntityFrameworkCore;
@@ -12,14 +13,8 @@ builder.Services.AddOpenApi();
 // package will act as the webserver translating request and responses between the Lambda event source and ASP.NET Core.
 builder.Services.AddAWSLambdaHosting(LambdaEventSource.RestApi);
 
-builder.Services.AddDbContext<AcceptaContext>(options =>
-    options.UseNpgsql(
-        builder.Configuration.GetConnectionString("AcceptaDB"),
-            npgsqlOptions =>
-            {
-                npgsqlOptions.MigrationsHistoryTable("__EFMigrationsHistory", "accepta");
-            })
-        .UseSnakeCaseNamingConvention());
+builder.Services.AddAuth()
+    .AddDatabase(builder.Configuration.GetConnectionString("AcceptaDB")!);
 
 var app = builder.Build();
 
